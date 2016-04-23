@@ -1,0 +1,78 @@
+<template name="newPost">
+
+	<header class="intro-header">
+		<div class="container">
+				<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+								<div class="site-heading">
+
+										<h1>{{homeSettings.headline}}</h1>
+										<hr class="small">
+										<span class="subheading">{{homeSettings.subHeadline}}</span>
+								</div>
+						</div>
+				</div>
+		</div>
+	</header>
+
+
+	<div class="container">
+
+		{{> errors}}
+
+	  <div id="categories" class="checkbox-group">
+			<h2>Categories</h2>
+		  <div class="checkbox">
+		  	{{#each categories}}
+			  	<label class="checkbox-inline">
+			    	<input type="checkbox" value="{{category}}">{{category}}
+	  		  	</label>
+  		  	{{/each}}
+		 	</div>
+		</div><!-- checkbox-group -->
+
+		<button type="button" id="new-category-btn" class="btn btn-default" data-toggle="collapse" data-target="#new-category-collapse" aria-expanded="false" aria-controls="new-category-collapse">New Category</button>
+		<button type="button" id="delete-category-btn" class="btn btn-default" data-toggle="collapse" data-target="#delete-category-collapse" aria-expanded="false" aria-controls="delete-category-collapse">Delete Category</button>
+
+		<div class="collapse" id="new-category-collapse">
+			<div class="well">
+				<label>Enter new category to create</label>
+				<form class="form-inline" id="new-category-form">
+					<div class="form-group">
+					<input type="text" class="form-control" id="newCategoryName" placeholder="Enter category name">
+					</div>
+					<button type="submit" class="btn btn-default">Create</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="collapse" id="delete-category-collapse">
+			<div class="well">
+
+				<form id="delete-category-form">
+					<div class="form-group">
+					<label>Choose categories to delete</label>
+							{{#each categories}}
+							<div>
+								<input type="checkbox" value="{{category}}">{{category}}
+							</div>
+							{{/each}}
+				</div>
+				<button type="submit" class="btn btn-default">Delete</button>
+				</form>
+
+			</div>
+		</div>
+
+		<form id="new-post-form">
+		  <div class="form-group">
+		    <input type="text" class="form-control" id="newPostTitle" placeholder="Post Title">
+		  </div>
+		  <div class="form-group">
+	  		<textarea id="newPostContent" class="form-control" rows="20" placeholder="Post Content"></textarea>
+	  	  </div>
+		  <button type="submit" class="btn btn-default">Submit Post</button>
+		</form>
+
+	</div>
+</template>

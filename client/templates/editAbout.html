@@ -1,0 +1,29 @@
+<template name="editAbout">
+ <header class="intro-header">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                 <div class="page-heading">
+                     <h1>About Me</h1>
+                     <hr class="small">
+                     <span class="subheading">This is what I do.</span>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </header>
+
+ <!-- Main Content -->
+ <div class="container">
+     <div class="row">
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+             <form id="edit-about-form">
+                 <textarea rows="20" id="editAboutContent">{{{aboutInfo}}}</textarea>
+                 <input type="submit" class="btn btn-default" value="Save Changes" />
+             </form>
+         </div>
+     </div>
+ </div>
+
+ <hr>
+</template>

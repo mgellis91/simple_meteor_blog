@@ -1,0 +1,57 @@
+
+<template name="blogList">
+
+	<header class="intro-header">
+		<div class="container">
+				<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+								<div class="site-heading">
+
+										<h1>{{homeHeadlines.headline}}</h1>
+										<hr class="small">
+										<span class="subheading">{{homeHeadlines.subHeadline}}</span>
+								</div>
+						</div>
+				</div>
+		</div>
+
+	</header>
+
+		<!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+								{{#each posts}}
+                <div class="post-preview">
+                    <a href="/post/{{_id}}">
+                        <h2 class="post-title">
+                            {{postTitle}}
+                        </h2>
+												<div class="post-content">
+														{{{postContent}}}
+												</div>
+                    </a>
+                    <span class="post-meta">Posted by <a href="#">{{postAuthor}}</a> on {{formattedDate}}</span><br />
+										<span class="post-meta">In Categories {{#each postCategories}} <a href="#">{{this}}</a> {{/each}} </span><br />
+										<span class="post-meta">{{commentsCount}} comment(s)</span>
+										<hr>
+                </div>
+								{{/each}}
+								{{#if noPosts}}
+									<div class="alert alert-info">
+								    <button type="button" class="close" data-dismiss="alert">&times;</button>
+										No posts to display
+								  </div>
+								{{/if}}
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a id="older-posts" href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+</template>

@@ -1,0 +1,29 @@
+<template name="about">
+ <header class="intro-header">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                 <div class="page-heading">
+                     <h1>{{aboutSettings.headline}}</h1>
+                     <hr class="small">
+                     <span class="subheading">{{aboutSettings.subHeadline}}</span>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </header>
+
+ <!-- Main Content -->
+ <div class="container">
+     <div class="row">
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+             <p>{{{aboutSettings.aboutInfo}}}</p>
+             {{#if currentUser}}
+                <p><a href="{{pathFor 'editAbout'}}">Edit about me</a></p>
+             {{/if}}
+         </div>
+     </div>
+ </div>
+
+ <hr>
+</template>

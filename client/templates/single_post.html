@@ -1,0 +1,70 @@
+<template name="singlePost">
+
+	<header class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>{{postTitle}}</h1>
+                        <span class="post-meta">Posted by <a href="{{pathFor 'about'}}">{{postAuthor}}</a> on {{formattedDate}}</span><br />
+												<span class="post-meta">In Categories {{#each postCategories}} <a href="#">{{this}}</a> {{/each}} </span><br />
+												<span class="post-meta">{{commentsCount}} comment(s)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </header>
+
+	<!-- Post Content -->
+  <article>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  {{{postContent}}}
+									{{#if currentUser}}
+										<div><a href="/editPost/{{_id}}">Edit Post</a></div>
+									{{/if}}
+              </div>
+
+          </div>
+      </div>
+  </article>
+
+  <hr>
+
+    {{#if comments.count}}
+    <!-- Submitted Comments -->
+		<div class="container">
+	    <div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	          <h3>Thoughts on Post Title</h3>
+						{{#each comments}}
+							<blockquote>
+								<em>{{name}}</em><br />&nbsp; - {{content}}
+							</blockquote>
+						{{/each}}
+	      </div>
+	    </div>
+		</div>
+    <!-- End Submitted Comments -->
+    {{/if}}
+
+		<div class="container">
+	    <div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	        <h3>Leave a Comment</h3>
+					{{>errors}}
+	        <form id="comment-form">
+	          <div class="form-group">
+	            <input type="text" class="form-control" id="newCommentName" placeholder="Name (optional)">
+	          </div>
+	          <div class="form-group">
+	            <textarea id="newCommentContent" class="form-control" rows="5" placeholder="Comment"></textarea>
+	            </div>
+	          <button type="submit" class="btn btn-default">Submit Comment</button>
+	        </form>
+	      </div>
+	    </div>
+		</div>
+
+</template>
