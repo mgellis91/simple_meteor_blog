@@ -1,7 +1,6 @@
 # Simple Meteor Blogging Site
 
 simple implementation of a blogging site created with the Meteor framework that can be used to create a personal blog
-re
 
 # Installation
 
