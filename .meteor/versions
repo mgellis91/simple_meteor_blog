@@ -6,7 +6,6 @@ binary-heap@1.0.3
 blaze@2.1.2
 blaze-tools@1.0.3
 boilerplate-generator@1.0.3
-bootstrap3-wysihtml5@0.0.0
 callback-hook@1.0.3
 check@1.0.5
 ddp@1.1.0
@@ -40,6 +39,7 @@ minimongo@1.0.8
 mizzao:bootstrap-3@3.3.1_1
 mobile-status-bar@1.0.3
 mongo@1.1.0
+mrt:bootstrap3-wysihtml5@0.3.3
 natestrauser:font-awesome@4.3.0
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
